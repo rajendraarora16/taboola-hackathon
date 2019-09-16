@@ -25,7 +25,7 @@
     injector += 'document.getElementsByTagName("head")[0].appendChild(selectorCSS);';
     injector += 'selectorJS = document.createElement("script");';
     injector += 'selectorJS.type = "text/javascript";';
-    injector += 'selectorJS.src = chrome.extension.getURL("/taboola_xpath.js");';
+    injector += 'selectorJS.src = chrome.extension.getURL("/taboola_selector.js");';
     injector += 'selectorJS.id = "selectorJS";';
     injector += 'document.getElementsByTagName("head")[0].appendChild(selectorJS);';
     injector += 'selectorResult = document.createElement("div"),';
