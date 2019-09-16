@@ -1,43 +1,43 @@
-var resultBanner = document.getElementById('selector-for-chrome-result');
-function init() {
-  resultBanner.innerHTML = '<p>Ready to kill some bugs!</p>';
-}
-
-// updates the info banner at the bottom of the page
+/**
+ * Updates the info banner at the bottom of the page
+ **/ 
 function updateBanner(event) {
+
+  if (event===undefined) event= window.event;                     // IE hack
+  var target= 'target' in event? event.target : event.srcElement; // another IE hack
+
   var id = event.target.id.toString() || '';
   var classList = event.target.classList.toString() || '';
   var node = event.target.nodeName.toLowerCase() || '';
-
-  if (!!!resultBanner)
-    return false;
-
-    /**
-     * No need right now the popup, since added comment.
-     */
-  // combine the node name, classes, and id into a string in the banner
-  // var resultContent = '<p>You\'re hovering on = { ';
-  // resultContent += 'node: <b> ' + node + '</b>; ';
-  // resultContent += 'classes: <b> ' + classList + '</b>; ';
-  // resultContent += 'id: <b> ' + id + '</b>;';
-  // resultContent +=  ' }</p>';
-
-  // resultBanner.innerHTML = resultContent;
+  var xpath= getPathTo(target) || '';
 
   console.log('Node: ', node);
   console.log('\nClasses: ', classList);
   console.log('\nId: ', id);
-  console.log('\nxpath: ', event);
+  console.log('\nxpath: ', xpath);
+
+  //Idea behind to use ID selector whether it is unique or not!
+  // document.querySelectorAll('#js-repo-pjax-container').length;
+
+  function getPathTo(element) {
+      if (element.id!=='')
+          return 'id("'+element.id+'")';
+      if (element===document.body)
+          return element.tagName;
+
+      var ix= 0;
+      var siblings= element.parentNode.childNodes;
+      for (var i= 0; i<siblings.length; i++) {
+          var sibling= siblings[i];
+          if (sibling===element)
+              return getPathTo(element.parentNode)+'/'+element.tagName+'['+(ix+1)+']';
+          if (sibling.nodeType===1 && sibling.tagName===element.tagName)
+              ix++;
+      }
+  }
 }
 
-// toggles the visibility of the banner
-function showBanner(event) {
-  resultBanner.className = '';
-  if (event.ctrlKey)
-    resultBanner.className = 'show';
-}
-
-init();
-document.addEventListener('mouseover', updateBanner, false);
-window.addEventListener('keydown', showBanner, false);
-window.addEventListener('keyup', showBanner, false);
+/**
+ * Add click listener event
+ */
+document.addEventListener('click', updateBanner, false);
