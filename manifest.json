@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Taboola xpath selector",
+  "short_name": "selector",
+  "description": "This extension helps to locate xpath in DOM",
+  "version": "1.0",
+
+  "permissions": [
+      "activeTab"
+  ],
+
+  "background": {
+    "scripts": ["xpath-injector.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_title": "Toggle Taboola Xpath Selector",
+    "default_icon": {
+      "19": "images/toolbar-chrome.png",
+      "38": "images/toolbar-chrome@2x.png"
+    }
+  },
+
+  "icons": {
+      "128": "icon_128.png",
+      "16": "icon_16.png",
+      "48": "icon_48.png"
+   },
+
+  "web_accessible_resources": [
+    "selector.min.css",
+    "taboola_selector.js"
+  ]
+}
