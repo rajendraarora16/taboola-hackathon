@@ -84,10 +84,10 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>desc: <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>img: <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>url: <input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Cop</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: </span><input id="meta-title" type="text" value="' + JSON.stringify(metaTagTitle) + '"></input><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>desc: </span><input id="meta-desc" type="text" value="' + metaTagDescription + '"></input><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>img: </span><input id="meta-img" type="text" value="' + metaTagImage + '"></input><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>url: </span><input id="meta-url" type="text" value="' + metaTagUrl + '"></input><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Cop</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';

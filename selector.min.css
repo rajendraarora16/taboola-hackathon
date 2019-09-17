@@ -1002,6 +1002,8 @@ wbr:hover {
     box-shadow: none !important;
     overflow-y: scroll;
     z-index: 999999;
+    box-sizing: border-box;
+    line-height: 1.5;
 }
 #selector-for-chrome-result .ts-wrapper:hover {
     background-color: transparent !important;
@@ -1027,9 +1029,11 @@ wbr:hover {
     vertical-align: middle;
     position: relative;
     width: 50px;
+    margin-left: 5px;
 }
 #selector-for-chrome-result .ts-button:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
 #selector-for-chrome-result .ts-button:after {
     content: "y";
@@ -1060,12 +1064,21 @@ wbr:hover {
 }
 #selector-for-chrome-result .ts-wrapper p.meta > span {
     display: inline-block;
-    width: 245px;
+    width: 40px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     outline: none !important;
     vertical-align: middle;
+}
+#selector-for-chrome-result .ts-wrapper p.meta input {
+    border: none;
+    outline: none !important;
+    background: transparent;
+    color: #0088C3;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #selector-for-chrome-result .ts-wrapper p.meta > span:hover {
     background: none;
