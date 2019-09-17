@@ -111,6 +111,10 @@ function showSidebarMenu(event) {
 /**
  * Add click listener event
  */
-document.addEventListener('mousedown', updateSidebarMenu, false);
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    updateSidebarMenu(event);
+ }, true); 
+ 
 window.addEventListener('keydown', showSidebarMenu, false);
 window.addEventListener('keyup', showSidebarMenu, false);
