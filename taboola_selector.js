@@ -49,10 +49,10 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
-    resultContent += '<p>desc: ' + metaTagDescription + '</p>';
-    resultContent += '<p>img: ' + metaTagImage + '</p>';
-    resultContent += '<p>url: ' + metaTagUrl + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: ' + metaTagTitle + '</span><button class=ts-button>Copy</button>' + '</p>';
+    resultContent += '<p class="meta"><span>desc: ' + metaTagDescription + '</span><button class=ts-button>Copy</button>' + '</p>';
+    resultContent += '<p class="meta"><span>img: ' + metaTagImage + '</span><button class=ts-button>Copy</button>' + '</p>';
+    resultContent += '<p class="meta"><span>url: ' + metaTagUrl + '</span><button class=ts-button>Copy</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
@@ -116,9 +116,13 @@ function showSidebarMenu(event) {
       resultBanner.className = 'show';
   }
 
-/**
- * Add click listener event
- */
-document.addEventListener('mousedown', updateSidebarMenu, false);
+// /**
+//  * Add click listener event
+//  */
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    updateSidebarMenu(event);
+ }, true); 
+ 
 window.addEventListener('keydown', showSidebarMenu, false);
 window.addEventListener('keyup', showSidebarMenu, false);

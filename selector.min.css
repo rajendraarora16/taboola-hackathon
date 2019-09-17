@@ -1015,6 +1015,20 @@ wbr:hover {
 #selector-for-chrome-result .ts-wrapper div:hover {
     background: transparent !important;
 }
+#selector-for-chrome-result .ts-button {
+    display: inline-block;
+    background: #144c92;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 5px;
+    outline: none !important;
+    border: none;
+    line-height: 1.5;
+    margin-left: 10px;
+    float: right;
+    vertical-align: middle;
+
+}
 #selector-for-chrome-result .contents-wrapper {
     padding: 5px;
     border: 1px solid #fff;
@@ -1032,6 +1046,16 @@ wbr:hover {
 #selector-for-chrome-result .ts-wrapper p {
     word-break: break-all;
     text-align: left;
+    overflow: hidden;
+}
+#selector-for-chrome-result .ts-wrapper p.meta > span {
+    display: inline-block;
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: none !important;
+    vertical-align: middle;
 }
 #selector-for-chrome-result.show {
     visibility: visible;
