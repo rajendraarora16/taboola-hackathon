@@ -987,7 +987,6 @@ wbr:hover {
 
 /* add'l style for extension */
 #selector-for-chrome-result {
-    line-height: 1.5;
     position: fixed;
     top: 0;
     width: 350px;
@@ -1003,7 +1002,6 @@ wbr:hover {
     box-shadow: none !important;
     overflow-y: scroll;
     z-index: 999999;
-    box-sizing: border-box;
 }
 #selector-for-chrome-result .ts-wrapper:hover {
     background-color: transparent !important;
@@ -1060,16 +1058,6 @@ wbr:hover {
     text-align: left;
     overflow: hidden;
 }
-#selector-for-chrome-result .ts-wrapper p.meta input {
-    background: transparent;
-    border: none;
-    outline: none !important;
-    font-weight: bold;
-    color: #0088C3;
-    width: 195px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 #selector-for-chrome-result .ts-wrapper p.meta > span {
     display: inline-block;
     width: 245px;
@@ -1113,23 +1101,6 @@ wbr:hover {
         width: 100%;
         height: 200px;
     }
-
-    .show-container-ts {
-        display: none;
-    }
-}
-
-.logo-img-ts {
-    height: 40px;
-    outline: unset!important;
-}
-
-.show-container-ts {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 80%;
-    background: red;
 }
 
 .logo-img-ts {
