@@ -36,11 +36,53 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<p>You\'re hovering on = { ';
-    resultContent += 'node: <b> ' + node + '</b>; ';
-    resultContent += 'classes: <b> ' + classList + '</b>; ';
-    resultContent += 'id: <b> ' + id + '</b>;';
-    resultContent +=  ' }</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    resultContent += '<p class="sub-title">Meta</p>';
+    resultContent += '<p>title: ' + 'title' + '</p>';
+    resultContent += '<p>desc: ' + 'desc' + '</p>';
+    resultContent += '<p>img: ' + 'img' + '</p>';
+    resultContent += '<p>url: ' + 'url' + '</p>';
+    resultContent += '<p class="sub-title">Selector</p>';
+    resultContent += '<p>node: ' + node + '</p>';
+    resultContent += '<p>classes: ' + classList + '</p>';
+    resultContent += '<p>ids: ' + id + '</p>';
+    resultContent += '<p class="sub-title">Xpath</p>';
+    resultContent += '<p>' + xpath + '</p>';
+    resultContent += '<p class="sub-title">BlahBlahBlah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '<p>blah</p>';
+    resultContent += '</div>';
 
     resultBanner.innerHTML = resultContent;
     

@@ -986,28 +986,45 @@ wbr:hover {
 
 
 /* add'l style for extension */
-
 #selector-for-chrome-result {
     position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 20px 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    padding: 20px;
     margin: 0;
-    background-color: #333;
+    background-color: rgba(0,0,0,0.9);
     color: #eee;
     font-size: 16px;
     text-align: center;
     outline: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
+    overflow-y: scroll
 }
-
+#selector-for-chrome-result .ts-wrapper {
+    ourline: none;
+}
+#selector-for-chrome-result .ts-wrapper .title {
+    font-weight: bold;
+    font-size: 26px;
+    margin: 10px 0;
+}
+#selector-for-chrome-result .ts-wrapper .sub-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0;
+}
+#selector-for-chrome-result .ts-wrapper p {
+    word-break: break-all;
+    text-align: left;
+}
 #selector-for-chrome-result.show {
     visibility: visible;
 }
 
 #selector-for-chrome-result p {
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     padding: 0;
     margin: 0;
