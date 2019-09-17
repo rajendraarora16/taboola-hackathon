@@ -52,7 +52,7 @@ function updateSidebarMenu(event) {
     resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
     resultContent += '<p>desc: ' + metaTagDescription + '</p>';
     resultContent += '<p>img: ' + metaTagImage + '</p>';
-    resultContent += '<p>url: ' + 'url' + '</p></div>';
+    resultContent += '<p>url: ' + metaTagUrl + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + isClassUnique + '</p> ';
