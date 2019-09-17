@@ -13,7 +13,18 @@ function updateSidebarMenu(event) {
 
     if (event===undefined) event= window.event;                     // IE hack
     var target= 'target' in event? event.target : event.srcElement; // another IE hack
+    
+    /**
+     * Meta tag info
+     */
+    var metaTagTitle = document.querySelector('meta[property="og:title"]') && document.querySelector('meta[property="og:title"]').content ? document.querySelector('meta[property="og:title"]').content : document.querySelector('meta[property="twitter:title"]') && document.querySelector('meta[property="twitter:title"]').content ? document.querySelector('meta[property="twitter:title"]').content : 'Unavailable';
+    var metaTagImage = document.querySelector('meta[property="og:image"]') && document.querySelector('meta[property="og:image"]').content ? document.querySelector('meta[property="og:image"]').content : document.querySelector('meta[property="twitter:image"]') && document.querySelector('meta[property="twitter:image"]').content ? document.querySelector('meta[property="twitter:image"]').content : 'Unavailable';
+    var metaTagUrl = document.querySelector('meta[property="og:url"]') && document.querySelector('meta[property="og:url"]').content ? document.querySelector('meta[property="og:url"]').content : document.querySelector('meta[property="twitter:url"]') && document.querySelector('meta[property="twitter:url"]').content ? document.querySelector('meta[property="twitter:url"]').content : 'Unavailable';
+    var metaTagDescription = document.querySelector('meta[property="og:description"]') && document.querySelector('meta[property="og:description"]').content ? document.querySelector('meta[property="og:description"]').content : document.querySelector('meta[property="twitter:description"]') && document.querySelector('meta[property="twitter:description"]').content ? document.querySelector('meta[property="twitter:description"]').content : 'Unavailable';
 
+    /**
+     * Selector info
+     */
     var id = event.target.id.toString() || '';
     var classList = event.target.classList.toString() || '';
     var node = event.target.nodeName.toLowerCase() || '';
