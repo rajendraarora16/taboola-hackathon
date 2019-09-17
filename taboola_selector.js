@@ -82,7 +82,7 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
     resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
     resultContent += '<p>desc: ' + metaTagDescription + '</p>';
