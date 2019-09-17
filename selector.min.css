@@ -988,7 +988,6 @@ wbr:hover {
 /* add'l style for extension */
 
 #selector-for-chrome-result {
-    visibility: hidden;
     position: fixed;
     bottom: 0;
     width: 100%;
