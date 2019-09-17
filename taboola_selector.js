@@ -108,9 +108,9 @@ function showSidebarMenu(event) {
       resultBanner.className = 'show';
   }
 
-/**
- * Add click listener event
- */
+// /**
+//  * Add click listener event
+//  */
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     updateSidebarMenu(event);
