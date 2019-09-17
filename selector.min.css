@@ -1055,3 +1055,12 @@ wbr:hover {
     box-shadow: none !important;
     background-color: inherit !important
 }
+
+@media screen and (max-width: 640px) {
+    #selector-for-chrome-result {
+        bottom: 0;
+        top: initial;
+        width: 100%;
+        height: 200px;
+    }
+}

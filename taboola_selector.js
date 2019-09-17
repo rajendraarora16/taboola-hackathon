@@ -55,8 +55,8 @@ function updateSidebarMenu(event) {
     resultContent += '<p>url: ' + metaTagUrl + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
-    resultContent += '<p>classes: ' + classList + isClassUnique + '</p> ';
-    resultContent += '<p>ids: ' + id + isIdUnique + '</p></div>';
+    resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
     resultContent += '</div>';
