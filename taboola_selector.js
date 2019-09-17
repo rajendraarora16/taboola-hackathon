@@ -47,11 +47,19 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<p>You\'re hovering on = { ';
-    resultContent += 'node: <b> ' + node + '</b>; ';
-    resultContent += 'classes: <b> ' + classList + '</b>; ';
-    resultContent += 'id: <b> ' + id + '</b>;';
-    resultContent +=  ' }</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    resultContent += '<p class="sub-title">Meta</p>';
+    resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
+    resultContent += '<p>desc: ' + metaTagDescription + '</p>';
+    resultContent += '<p>img: ' + metaTagImage + '</p>';
+    resultContent += '<p>url: ' + metaTagUrl + '</p></div>';
+    resultContent += '<p class="sub-title">Selector</p>';
+    resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
+    resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
+    resultContent += '<p class="sub-title">Xpath</p>';
+    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
+    resultContent += '</div>';
 
     resultBanner.innerHTML = resultContent;
     
