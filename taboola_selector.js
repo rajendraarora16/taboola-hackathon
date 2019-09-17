@@ -3,7 +3,7 @@
  */
 var resultBanner = document.getElementById('selector-for-chrome-result');
 function init() {
-    resultBanner.innerHTML = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    resultBanner.innerHTML = '<p>Ready to kill some bugs!</p>';
 }
 
 /**
@@ -82,12 +82,12 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <label class="meta-title">' + metaTagTitle + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>desc: <label class="meta-desc">' + metaTagDescription + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>img: <label class="meta-img">' + metaTagImage + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>url: <label class="meta-url">' + metaTagUrl + '</label></span><button class=ts-button>Cop</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Cop</button>' + '</p>';
+   resultContent += '<p class="meta"><span>desc: <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Cop</button>' + '</p>';
+   resultContent += '<p class="meta"><span>img: <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Cop</button>' + '</p>';
+   resultContent += '<p class="meta"><span>url: <input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Cop</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
@@ -95,10 +95,10 @@ function updateSidebarMenu(event) {
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
     resultContent += '</div>';
-    resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
     resultBanner.innerHTML = resultContent;
-    
+
+   
 
     function getPathTo(element) {
         if (element.id!=='')
@@ -149,10 +149,9 @@ function updateSidebarMenu(event) {
 function showSidebarMenu(event) {
     resultBanner.className = '';
     if (event.ctrlKey)
-        resultBanner.className = 'show';
-}
+      resultBanner.className = 'show';
+  }
 
-init();  
 // /**
 //  * Add click listener event
 //  */
@@ -167,13 +166,10 @@ document.addEventListener('contextmenu', function(event) {
     resultBanner.style.left = '0px';
  }, true); 
  
-function showHideTSContainer() {
-    var resultBannerContainer = document.getElementById('selector-for-chrome-result');
-    if(resultBannerContainer.style.left == '-340px') {
-        resultBannerContainer.style.left = '0px';
-    } else {
-        resultBannerContainer.style.left = '-340px';
-    }
+ function tscopyselector(elm){
+    var copyText = document.getElementById(elm);
+    copyText.select();
+    document.execCommand("copy");
 }
 
 window.addEventListener('keydown', showSidebarMenu, false);

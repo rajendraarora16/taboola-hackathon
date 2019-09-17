@@ -1101,21 +1101,9 @@ wbr:hover {
         width: 100%;
         height: 200px;
     }
-
-    .show-container-ts {
-        display: none;
-    }
 }
 
 .logo-img-ts {
     height: 40px;
     outline: unset!important;
-}
-
-.show-container-ts {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 80%;
-    background: red;
 }
