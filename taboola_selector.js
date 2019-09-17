@@ -3,7 +3,7 @@
  */
 var resultBanner = document.getElementById('selector-for-chrome-result');
 function init() {
-    resultBanner.innerHTML = '<p>Ready to kill some bugs!</p>';
+    resultBanner.innerHTML = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
 }
 
 /**
@@ -80,9 +80,9 @@ function updateSidebarMenu(event) {
      * Update sidebar menu with the changes
      */
     if (!!!resultBanner)
-    return false;
+        return false;
 
-    var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
     resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Cop</button>' + '</p>';
    resultContent += '<p class="meta"><span>desc: <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Cop</button>' + '</p>';
@@ -95,6 +95,7 @@ function updateSidebarMenu(event) {
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
     resultContent += '</div>';
+    resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
     resultBanner.innerHTML = resultContent;
 
@@ -152,6 +153,8 @@ function showSidebarMenu(event) {
       resultBanner.className = 'show';
   }
 
+init();  
+
 // /**
 //  * Add click listener event
 //  */
@@ -166,7 +169,16 @@ document.addEventListener('contextmenu', function(event) {
     resultBanner.style.left = '0px';
  }, true); 
  
- function tscopyselector(elm){
+function showHideTSContainer() {
+    var resultBannerContainer = document.getElementById('selector-for-chrome-result');
+    if(resultBannerContainer.style.left == '-340px') {
+        resultBannerContainer.style.left = '0px';
+    } else {
+        resultBannerContainer.style.left = '-340px';
+    }
+}
+
+function tscopyselector(elm){
     var copyText = document.getElementById(elm);
     copyText.select();
     document.execCommand("copy");
