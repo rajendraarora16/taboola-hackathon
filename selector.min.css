@@ -1009,6 +1009,16 @@ wbr:hover {
 #selector-for-chrome-result .ts-wrapper {
     outline: none !important;
 }
+#selector-for-chrome-result .ts-wrapper div {
+    outline: none !important;
+}
+#selector-for-chrome-result .ts-wrapper div:hover {
+    background: transparent !important;
+}
+#selector-for-chrome-result .contents-wrapper {
+    padding: 5px;
+    border: 1px solid #fff;
+}
 #selector-for-chrome-result .ts-wrapper .title {
     font-weight: bold;
     font-size: 26px;

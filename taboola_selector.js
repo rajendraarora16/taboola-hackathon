@@ -49,50 +49,16 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<p>title: ' + 'title' + '</p>';
-    resultContent += '<p>desc: ' + 'desc' + '</p>';
-    resultContent += '<p>img: ' + 'img' + '</p>';
-    resultContent += '<p>url: ' + 'url' + '</p>';
+    resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
+    resultContent += '<p>desc: ' + metaTagDescription + '</p>';
+    resultContent += '<p>img: ' + metaTagImage + '</p>';
+    resultContent += '<p>url: ' + 'url' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
-    resultContent += '<p>node: ' + node + '</p>';
-    resultContent += '<p>classes: ' + classList + '</p>';
-    resultContent += '<p>ids: ' + id + '</p>';
+    resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
+    resultContent += '<p>classes: ' + classList + isClassUnique + '</p> ';
+    resultContent += '<p>ids: ' + id + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
-    resultContent += '<p>' + xpath + '</p>';
-    resultContent += '<p class="sub-title">BlahBlahBlah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
-    resultContent += '<p>blah</p>';
+    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
     resultContent += '</div>';
 
     resultBanner.innerHTML = resultContent;
@@ -153,10 +119,6 @@ function showSidebarMenu(event) {
 /**
  * Add click listener event
  */
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-    updateSidebarMenu(event);
- }, true); 
- 
+document.addEventListener('mousedown', updateSidebarMenu, false);
 window.addEventListener('keydown', showSidebarMenu, false);
 window.addEventListener('keyup', showSidebarMenu, false);
