@@ -3,7 +3,7 @@
  */
 var resultBanner = document.getElementById('selector-for-chrome-result');
 function init() {
-    resultBanner.innerHTML = '<p>Ready to kill some bugs!</p>';
+    resultBanner.innerHTML = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
 }
 
 /**
@@ -82,7 +82,7 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
     resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <label class="meta-title">' + metaTagTitle + '</label></span><button class=ts-button>Cop</button>' + '</p>';
     resultContent += '<p class="meta"><span>desc: <label class="meta-desc">' + metaTagDescription + '</label></span><button class=ts-button>Cop</button>' + '</p>';
@@ -95,6 +95,7 @@ function updateSidebarMenu(event) {
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
     resultContent += '</div>';
+    resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
     resultBanner.innerHTML = resultContent;
     
@@ -148,9 +149,10 @@ function updateSidebarMenu(event) {
 function showSidebarMenu(event) {
     resultBanner.className = '';
     if (event.ctrlKey)
-      resultBanner.className = 'show';
-  }
+        resultBanner.className = 'show';
+}
 
+init();  
 // /**
 //  * Add click listener event
 //  */
@@ -159,5 +161,14 @@ document.addEventListener('contextmenu', function(event) {
     updateSidebarMenu(event);
  }, true); 
  
+function showHideTSContainer() {
+    var resultBannerContainer = document.getElementById('selector-for-chrome-result');
+    if(resultBannerContainer.style.left == '-340px') {
+        resultBannerContainer.style.left = '0px';
+    } else {
+        resultBannerContainer.style.left = '-340px';
+    }
+}
+
 window.addEventListener('keydown', showSidebarMenu, false);
 window.addEventListener('keyup', showSidebarMenu, false);
