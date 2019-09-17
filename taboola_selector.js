@@ -21,6 +21,41 @@ function updateSidebarMenu(event) {
     var metaTagImage = document.querySelector('meta[property="og:image"]') && document.querySelector('meta[property="og:image"]').content ? document.querySelector('meta[property="og:image"]').content : document.querySelector('meta[property="twitter:image"]') && document.querySelector('meta[property="twitter:image"]').content ? document.querySelector('meta[property="twitter:image"]').content : 'Unavailable';
     var metaTagUrl = document.querySelector('meta[property="og:url"]') && document.querySelector('meta[property="og:url"]').content ? document.querySelector('meta[property="og:url"]').content : document.querySelector('meta[property="twitter:url"]') && document.querySelector('meta[property="twitter:url"]').content ? document.querySelector('meta[property="twitter:url"]').content : 'Unavailable';
     var metaTagDescription = document.querySelector('meta[property="og:description"]') && document.querySelector('meta[property="og:description"]').content ? document.querySelector('meta[property="og:description"]').content : document.querySelector('meta[property="twitter:description"]') && document.querySelector('meta[property="twitter:description"]').content ? document.querySelector('meta[property="twitter:description"]').content : 'Unavailable';
+    var metaTagCategory = document.querySelector('meta[property="og:category"]') && document.querySelector('meta[property="og:category"]').content ? document.querySelector('meta[property="og:category"]').content : document.querySelector('meta[property="twitter:category"]') && document.querySelector('meta[property="twitter:category"]').content ? document.querySelector('meta[property="twitter:category"]').content : 'Unavailable';
+
+    /**
+     * Meta tag xpath info
+     */
+    var metaTagTitleXpath = 'Xpath Unavailable'; 
+    var metaTagImageXpath = 'Xpath Unavailable';
+    var metaTagUrlXpath = 'Xpath Unavailable';
+    var metaTagDescriptionXpath = 'Xpath Unavailable';
+    var metaTagCategoryXpath = 'Xpath Unavailable';
+    if(metaTagTitle != 'Unavailable') {
+        metaTagTitleXpath = '//html:meta[@property="og:title"]/@content';
+    }
+    if(metaTagImage != 'Unavailable') {
+        metaTagImageXpath = '//html:meta[@property="og:image"]/@content';
+    }
+    if(metaTagUrl != 'Unavailable') {
+        metaTagUrlXpath = '//html:meta[@property="og:url"]/@content';
+    }
+    if(metaTagDescription != 'Unavailable') {
+        metaTagDescriptionXpath = '//html:meta[@property="og:description"]/@content';
+    }
+    if(metaTagCategory != 'Unavailable') {
+        metaTagCategoryXpath = '//html:meta[@property="og:category"]/@content';
+    }
+
+    /**
+     * Debugging purpose, remove it once we are done with console.
+     */
+    console.log('meta: ', metaTagTitleXpath)
+    console.log('meta: ', metaTagImageXpath)
+    console.log('meta: ', metaTagUrlXpath)
+    console.log('meta: ', metaTagDescriptionXpath)
+    console.log('meta: ', metaTagCategoryXpath)
+
 
     /**
      * Selector info
