@@ -82,12 +82,12 @@ function updateSidebarMenu(event) {
     if (!!!resultBanner)
     return false;
 
-    var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <label class="meta-title">' + metaTagTitle + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>desc: <label class="meta-desc">' + metaTagDescription + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>img: <label class="meta-img">' + metaTagImage + '</label></span><button class=ts-button>Cop</button>' + '</p>';
-    resultContent += '<p class="meta"><span>url: <label class="meta-url">' + metaTagUrl + '</label></span><button class=ts-button>Cop</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <input class="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>desc: <input class="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>img: <input class="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>url: <input class="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=ts-button>Cop</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
