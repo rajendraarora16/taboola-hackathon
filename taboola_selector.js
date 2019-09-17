@@ -49,10 +49,10 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: ' + metaTagTitle + '</span><button class=ts-button>Copy</button>' + '</p>';
-    resultContent += '<p class="meta"><span>desc: ' + metaTagDescription + '</span><button class=ts-button>Copy</button>' + '</p>';
-    resultContent += '<p class="meta"><span>img: ' + metaTagImage + '</span><button class=ts-button>Copy</button>' + '</p>';
-    resultContent += '<p class="meta"><span>url: ' + metaTagUrl + '</span><button class=ts-button>Copy</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <label class="meta-title">' + metaTagTitle + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>desc: <label class="meta-desc">' + metaTagDescription + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>img: <label class="meta-img">' + metaTagImage + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>url: <label class="meta-url">' + metaTagUrl + '</label></span><button class=ts-button>Cop</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
