@@ -84,10 +84,10 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title"><img class="logo-img-ts" src="https://i.stack.imgur.com/mC7lr.png" alt="Taboola selector"> Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p>title: ' + metaTagTitle + '</p>';
-    resultContent += '<p>desc: ' + metaTagDescription + '</p>';
-    resultContent += '<p>img: ' + metaTagImage + '</p>';
-    resultContent += '<p>url: ' + metaTagUrl + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <label class="meta-title">' + metaTagTitle + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>desc: <label class="meta-desc">' + metaTagDescription + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>img: <label class="meta-img">' + metaTagImage + '</label></span><button class=ts-button>Cop</button>' + '</p>';
+    resultContent += '<p class="meta"><span>url: <label class="meta-url">' + metaTagUrl + '</label></span><button class=ts-button>Cop</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';

@@ -1015,6 +1015,30 @@ wbr:hover {
 #selector-for-chrome-result .ts-wrapper div:hover {
     background: transparent !important;
 }
+#selector-for-chrome-result .ts-button {
+    display: inline-block;
+    background: #144c92;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 5px;
+    outline: none !important;
+    border: none;
+    line-height: 1.5;
+    vertical-align: middle;
+    position: relative;
+    width: 50px;
+}
+#selector-for-chrome-result .ts-button:hover {
+    opacity: 0.7;
+}
+#selector-for-chrome-result .ts-button:after {
+    content: "y";
+    display: inline-block;
+}
+#selector-for-chrome-result .ts-button:active:after {
+    content: "ied";
+    display: inline-block;
+}
 #selector-for-chrome-result .contents-wrapper {
     padding: 5px;
     border: 1px solid #fff;
@@ -1032,6 +1056,19 @@ wbr:hover {
 #selector-for-chrome-result .ts-wrapper p {
     word-break: break-all;
     text-align: left;
+    overflow: hidden;
+}
+#selector-for-chrome-result .ts-wrapper p.meta > span {
+    display: inline-block;
+    width: 245px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: none !important;
+    vertical-align: middle;
+}
+#selector-for-chrome-result .ts-wrapper p.meta > span:hover {
+    background: none;
 }
 #selector-for-chrome-result.show {
     visibility: visible;
@@ -1048,7 +1085,8 @@ wbr:hover {
     background-color: inherit !important;
 }
 
-#selector-for-chrome-result b {
+#selector-for-chrome-result b,
+#selector-for-chrome-result label {
     color: #0088C3;
     outline: none !important;
     -webkit-box-shadow: none !important;
