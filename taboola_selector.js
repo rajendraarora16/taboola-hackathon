@@ -159,6 +159,12 @@ init();
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     updateSidebarMenu(event);
+
+    /**
+     * Apply style to show container
+     */
+    var resultBannerContainer = document.getElementById('selector-for-chrome-result');
+    resultBanner.style.left = '0px';
  }, true); 
  
 function showHideTSContainer() {
