@@ -16,7 +16,7 @@
   },
 
   "browser_action": {
-    "default_title": "Toggle Taboola Xpath Selector",
+    "default_title": "Taboola Selector Tool",
     "default_icon": {
       "19": "images/toolbar-chrome.png",
       "38": "images/toolbar-chrome@2x.png"
@@ -31,6 +31,8 @@
 
   "web_accessible_resources": [
     "selector.min.css",
-    "taboola_selector.js"
+    "taboola_selector.js",
+    "mouse_event.js",
+    "enable_mouse_event.js"
   ]
 }
