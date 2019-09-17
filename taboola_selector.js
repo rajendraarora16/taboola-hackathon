@@ -116,9 +116,13 @@ function showSidebarMenu(event) {
       resultBanner.className = 'show';
   }
 
-/**
- * Add click listener event
- */
-document.addEventListener('mousedown', updateSidebarMenu, false);
+// /**
+//  * Add click listener event
+//  */
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    updateSidebarMenu(event);
+ }, true); 
+ 
 window.addEventListener('keydown', showSidebarMenu, false);
 window.addEventListener('keyup', showSidebarMenu, false);

@@ -17,7 +17,7 @@
     injector += 'mouseEnableJS.type = "text/javascript";';
     injector += 'mouseEnableJS.src = chrome.extension.getURL("/enable_mouse_event.js");';
     injector += 'mouseEnableJS.id = "mouseEnableJS";';
-    injector += 'document.getElementsByTagName("head")[0].appendChild(mouseEnableJS);';
+    injector += 'document.getElementsByTagName("body")[0].appendChild(mouseEnableJS);';
     injector += 'document.getElementsByTagName("body")[0].removeChild(document.getElementById("selector-for-chrome-result"));';
 
     //if they don't exist, inject them
