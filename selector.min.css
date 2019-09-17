@@ -989,7 +989,7 @@ wbr:hover {
 #selector-for-chrome-result {
     position: fixed;
     top: 0;
-    width: 30%;
+    width: 350px;
     height: 100%;
     padding: 20px;
     margin: 0;
@@ -1000,10 +1000,14 @@ wbr:hover {
     outline: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    overflow-y: scroll
+    overflow-y: scroll;
+    z-index: 999999;
+}
+#selector-for-chrome-result .ts-wrapper:hover {
+    background-color: transparent !important;
 }
 #selector-for-chrome-result .ts-wrapper {
-    ourline: none;
+    outline: none !important;
 }
 #selector-for-chrome-result .ts-wrapper .title {
     font-weight: bold;
