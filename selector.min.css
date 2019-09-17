@@ -1102,3 +1102,8 @@ wbr:hover {
         height: 200px;
     }
 }
+
+.logo-img-ts {
+    height: 40px;
+    outline: unset!important;
+}
