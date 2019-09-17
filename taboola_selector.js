@@ -1,7 +1,15 @@
 /**
+ * Initialize toggle side bar
+ */
+var resultBanner = document.getElementById('selector-for-chrome-result');
+function init() {
+    resultBanner.innerHTML = '<p>Ready to kill some bugs!</p>';
+}
+
+/**
  * Updates the info banner at the bottom of the page
  **/ 
-function updateBanner(event) {
+function updateSidebarMenu(event) {
 
     if (event===undefined) event= window.event;                     // IE hack
     var target= 'target' in event? event.target : event.srcElement; // another IE hack
@@ -16,15 +24,26 @@ function updateBanner(event) {
   /**
    * Check class is unique or not
    */
-
     console.log('Node: ', node);
     console.log('\nClasses: ' + classList + '', classList != '' ? isClassUnique : ' No class name found');
     console.log('\nId: ' + id + '', id != '' ? isIdUnique : 'No id name found');
     console.log('\nxpath: ', xpath);
-    
 
-    //Idea behind to use ID selector whether it is unique or not!
-    // document.querySelectorAll('#js-repo-pjax-container').length;
+
+    /**
+     * Update sidebar menu with the changes
+     */
+    if (!!!resultBanner)
+    return false;
+
+    var resultContent = '<p>You\'re hovering on = { ';
+    resultContent += 'node: <b> ' + node + '</b>; ';
+    resultContent += 'classes: <b> ' + classList + '</b>; ';
+    resultContent += 'id: <b> ' + id + '</b>;';
+    resultContent +=  ' }</p>';
+
+    resultBanner.innerHTML = resultContent;
+    
 
     function getPathTo(element) {
         if (element.id!=='')
@@ -69,6 +88,18 @@ function updateBanner(event) {
 }
 
 /**
+ * showSidebarMenu() - toggles the visibility of the side bar banner
+ * @param {*} event 
+ */
+function showSidebarMenu(event) {
+    resultBanner.className = '';
+    if (event.ctrlKey)
+      resultBanner.className = 'show';
+  }
+
+/**
  * Add click listener event
  */
-document.addEventListener('mouseover', updateBanner, false);
+document.addEventListener('mousedown', updateSidebarMenu, false);
+window.addEventListener('keydown', showSidebarMenu, false);
+window.addEventListener('keyup', showSidebarMenu, false);
