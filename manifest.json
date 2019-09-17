@@ -31,6 +31,8 @@
 
   "web_accessible_resources": [
     "selector.min.css",
-    "taboola_selector.js"
+    "taboola_selector.js",
+    "mouse_event.js",
+    "enable_mouse_event.js"
   ]
 }
