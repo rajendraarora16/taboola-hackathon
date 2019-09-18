@@ -8,12 +8,12 @@ function init() {
 
 /**
  * Updates the info banner at the bottom of the page
- **/ 
+ **/
 function updateSidebarMenu(event) {
 
     if (event===undefined) event= window.event;                     // IE hack
     var target= 'target' in event? event.target : event.srcElement; // another IE hack
-    
+
     /**
      * Meta tag info
      */
@@ -27,11 +27,11 @@ function updateSidebarMenu(event) {
      * Facebook App ID
      */
     var fbAppId = document.querySelector('meta[property="fb:app_id"]') && document.querySelector('meta[property="fb:app_id"]').content ? document.querySelector('meta[property="fb:app_id"]').content : getFacebookIDTS(document);
-    
+
     /**
      * Meta tag xpath info
      */
-    var metaTagTitleXpath = 'Xpath Unavailable'; 
+    var metaTagTitleXpath = 'Xpath Unavailable';
     var metaTagImageXpath = 'Xpath Unavailable';
     var metaTagUrlXpath = 'Xpath Unavailable';
     var metaTagDescriptionXpath = 'Xpath Unavailable';
@@ -89,23 +89,23 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span><strong class="strong">Title:</strong> <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button-title\' onclick=\'tscopyselector("'+escape(metaTagTitleXpath)+'", "ts-button-title")\'>Copy xpath</button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Desc:</strong> <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button-desc\' onclick=\'tscopyselector("'+escape(metaTagDescriptionXpath)+'", "ts-button-desc")\'>Copy xpath</button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button-img\' onclick=\'tscopyselector("'+escape(metaTagImageXpath)+'", "ts-button-img")\'>Copy xpath</button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button-url\' onclick=\'tscopyselector("'+escape(metaTagUrlXpath)+'", "ts-button-url")\'>Copy xpath</button>' + '</p></div>';
-   resultContent += '<p class="meta"><span><strong class="strong">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
-    resultContent += '<p class="sub-title"><strong class="strong">Selector</strong></p>';
-    resultContent += '<div class="contents-wrapper"><p><strong class="strong">Node:</strong> ' + node + '</p>';
-    resultContent += '<p><strong class="strong">Classes: </strong>' + classList + ' ' + isClassUnique + '</p>';
-    resultContent += '<p><strong class="strong">Ids:</strong> ' + id + ' ' + isIdUnique + '</p></div>';
-    resultContent += '<p class="sub-title"><strong class="strong">Xpath</strong></p>';
-    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p> <button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span><strong class="strong inner-text">Title:</strong> <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button-title\' onclick=\'tscopyselector("'+escape(metaTagTitleXpath)+'", "ts-button-title")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong inner-text">Desc:</strong> <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button-desc\' onclick=\'tscopyselector("'+escape(metaTagDescriptionXpath)+'", "ts-button-desc")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong inner-text">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button-img\' onclick=\'tscopyselector("'+escape(metaTagImageXpath)+'", "ts-button-img")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong inner-text">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button-url\' onclick=\'tscopyselector("'+escape(metaTagUrlXpath)+'", "ts-button-url")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong inner-text">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
+    resultContent += '<p class="sub-title">Selector</p>';
+    resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
+    resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
+    resultContent += '<p class="sub-title">Xpath</p>';
+    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p><button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
     resultContent += '</div>';
     resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
     resultBanner.innerHTML = resultContent;
 
-   
+
 
     function getPathTo(element) {
         if (element.id!=='')
@@ -126,7 +126,7 @@ function updateSidebarMenu(event) {
 
     /**
      * isClassUnique() - to check whether class name is unique in DOM or not
-     * @param {*} className 
+     * @param {*} className
      */
     function isClassUnique(className) {
         if(document.getElementsByClassName(className).length === 1) {
@@ -138,7 +138,7 @@ function updateSidebarMenu(event) {
 
     /**
      * isIdUnique() - to check whether id name is unique in DOM or not
-     * @param {*} id 
+     * @param {*} id
      */
     function isIdUnique(id) {
         if(id && document.querySelectorAll("[id='"+id+"']") && document.querySelectorAll("[id='"+id+"']").length === 1) {
@@ -151,7 +151,7 @@ function updateSidebarMenu(event) {
 
 /**
  * showSidebarMenu() - toggles the visibility of the side bar banner
- * @param {*} event 
+ * @param {*} event
  */
 function showSidebarMenu(event) {
     resultBanner.className = '';
@@ -159,7 +159,7 @@ function showSidebarMenu(event) {
       resultBanner.className = 'show';
   }
 
-init();  
+init();
 
 // /**
 //  * Add click listener event
@@ -173,8 +173,8 @@ document.addEventListener('contextmenu', function(event) {
      */
     var resultBannerContainer = document.getElementById('selector-for-chrome-result');
     resultBanner.style.left = '0px';
- }, true); 
- 
+ }, true);
+
 function showHideTSContainer() {
     var resultBannerContainer = document.getElementById('selector-for-chrome-result');
     if(resultBannerContainer.style.left == '-340px') {

@@ -1049,10 +1049,11 @@ wbr:hover {
     word-break: break-all;
     text-align: left;
     overflow: hidden;
+    margin: 5px 0 5px 0;
 }
 #selector-for-chrome-result .ts-wrapper p.meta > span {
     display: inline-block;
-    width: 245px;
+    width: 200px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -1119,11 +1120,38 @@ wbr:hover {
 
 .strong {
     outline: unset!important;
+
 }
 
 .ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category, .ts-button-xpath {
     padding: 0px!important;
-    background: #000!important;
-    border: 1px solid #fff !important;
-    border-radius: 10%!important;
+    background: #0088c3!important;
+    border: 1px solid #0088c3 !important;
+    outline: unset!important;
+    font-size: 10px;
+    padding: 5px!important;
+    color: #fff;
+
+}
+
+/*Changing input font size */
+input[type="text"]:not(.s-input) {
+    font-size: 10px!important;
+    color: white!important;
+    Background: black!important;
+    outline: unset!important;
+}
+
+.inner-text {
+  font-size: 12px;
+  display: inline-block;
+  width: 60px;
+}
+
+#selector-for-chrome-result > div.ts-wrapper > div:nth-child(3) > p:nth-child(4) > span > strong {
+  margin-right: 4px;
+}
+
+#selector-for-chrome-result > div.ts-wrapper > div:nth-child(3) > p:nth-child(5) > span > strong {
+    margin-right: 4px;
 }
