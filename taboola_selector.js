@@ -100,6 +100,10 @@ function updateSidebarMenu(event) {
     resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p><button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
+    resultContent += '<p class="sub-title">Facebook App ID</p>';
+    resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p></div>';
+    resultContent += '<p class="sub-title">Google DFP</p>';
+    resultContent += '<div class="contents-wrapper"><p>' + 'Google' + '</p></div>';
     resultContent += '</div>';
     resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
