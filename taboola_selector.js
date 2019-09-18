@@ -84,10 +84,10 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span>title: <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>desc: <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>img: <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Cop</button>' + '</p>';
-   resultContent += '<p class="meta"><span>url: <input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Cop</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span><strong class="strong">Title:</strong> <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Desc:</strong> <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Copy </button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Copy</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Copy</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
