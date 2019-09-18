@@ -1001,7 +1001,7 @@ wbr:hover {
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     overflow-y: scroll;
-    z-index: 999999;
+    z-index: 999999999999999999;
 }
 #selector-for-chrome-result .ts-wrapper:hover {
     background-color: transparent !important;
@@ -1108,9 +1108,9 @@ wbr:hover {
 .show-container-ts {
     position: absolute;
     right: 0;
-    bottom: 0;
     left: 80%;
     background: red;
+    top: 0;
 }
 
 .logo-img-ts {
@@ -1123,7 +1123,7 @@ wbr:hover {
 
 }
 
-.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category, .ts-button-xpath {
+.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category, .ts-button-xpath, .ts-button-facebook {
     padding: 0px!important;
     background: #0088c3!important;
     border: 1px solid #0088c3 !important;
@@ -1159,4 +1159,8 @@ input[type="text"]:not(.s-input) {
 
 #selector-for-chrome-result > div.ts-wrapper > div:nth-child(3) > p:nth-child(5) > span > strong {
     margin-right: 4px;
+}
+
+.instruction_ts {
+    font-size: 12px !important;
 }
