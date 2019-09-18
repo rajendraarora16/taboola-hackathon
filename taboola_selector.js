@@ -32,19 +32,19 @@ function updateSidebarMenu(event) {
     var metaTagDescriptionXpath = 'Xpath Unavailable';
     var metaTagCategoryXpath = 'Xpath Unavailable';
     if(metaTagTitle != 'Unavailable') {
-        metaTagTitleXpath = '//html:meta[@property="og:title"]/@content';
+        metaTagTitleXpath = "//html:meta[@property='og:title']/@content";
     }
     if(metaTagImage != 'Unavailable') {
-        metaTagImageXpath = '//html:meta[@property="og:image"]/@content';
+        metaTagImageXpath = "//html:meta[@property='og:image']/@content";
     }
     if(metaTagUrl != 'Unavailable') {
-        metaTagUrlXpath = '//html:meta[@property="og:url"]/@content';
+        metaTagUrlXpath = "//html:meta[@property='og:url']/@content";
     }
     if(metaTagDescription != 'Unavailable') {
-        metaTagDescriptionXpath = '//html:meta[@property="og:description"]/@content';
+        metaTagDescriptionXpath = "//html:meta[@property='og:description']/@content";
     }
     if(metaTagCategory != 'Unavailable') {
-        metaTagCategoryXpath = '//html:meta[@property="og:category"]/@content';
+        metaTagCategoryXpath = "//html:meta[@property='og:category']/@content";
     }
 
     /**
@@ -84,10 +84,11 @@ function updateSidebarMenu(event) {
 
     var resultContent = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
     resultContent += '<p class="sub-title">Meta</p>';
-    resultContent += '<div class="contents-wrapper"><p class="meta"><span><strong class="strong">Title:</strong> <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-title")\'>Copy xpath</button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Desc:</strong> <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-desc")\'>Copy </button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-img")\'>Copy</button>' + '</p>';
-   resultContent += '<p class="meta"><span><strong class="strong">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button\' onclick=\'tscopyselector("meta-url")\'>Copy</button>' + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p class="meta"><span><strong class="strong">Title:</strong> <input id="meta-title" type="text" value="' + metaTagTitle + '"></input></span><button class=\'ts-button-title\' onclick=\'tscopyselector("'+escape(metaTagTitleXpath)+'", "ts-button-title")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Desc:</strong> <input id="meta-desc" type="text" value="' + metaTagDescription + '"></input></span><button class=\'ts-button-desc\' onclick=\'tscopyselector("'+escape(metaTagDescriptionXpath)+'", "ts-button-desc")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button-img\' onclick=\'tscopyselector("'+escape(metaTagImageXpath)+'", "ts-button-img")\'>Copy xpath</button>' + '</p>';
+   resultContent += '<p class="meta"><span><strong class="strong">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button-url\' onclick=\'tscopyselector("'+escape(metaTagUrlXpath)+'", "ts-button-url")\'>Copy xpath</button>' + '</p></div>';
+   resultContent += '<p class="meta"><span><strong class="strong">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
     resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
@@ -178,10 +179,19 @@ function showHideTSContainer() {
     }
 }
 
-function tscopyselector(elm){
-    var copyText = document.getElementById(elm);
-    copyText.select();
+function tscopyselector(val, btnElm){
+
+    var dummyInput = document.createElement("input");
+    document.body.appendChild(dummyInput);
+    dummyInput.setAttribute("type", "text");
+    dummyInput.setAttribute("id", "dummy_id");
+    dummyInput.setAttribute("value", unescape(val));
+    dummyInput.focus();
+    dummyInput.select();
     document.execCommand("copy");
+    document.body.removeChild(dummyInput);
+
+    document.getElementsByClassName(btnElm)[0].innerText="Copied!";
 }
 
 window.addEventListener('keydown', showSidebarMenu, false);
