@@ -5,7 +5,7 @@ var resultBanner = document.getElementById('selector-for-chrome-result');
 function init() {
 
     var instructHtmlDom = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
-    instructHtmlDom += '<p class="instruction_ts">Please right click in on element hightlighted to get result</p>';
+    instructHtmlDom += '<p class="instruction_ts">Please right click on the element hightlighted to get result</p>';
     resultBanner.innerHTML = instructHtmlDom;
 }
 
