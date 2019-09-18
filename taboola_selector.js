@@ -3,7 +3,10 @@
  */
 var resultBanner = document.getElementById('selector-for-chrome-result');
 function init() {
-    resultBanner.innerHTML = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+
+    var instructHtmlDom = '<div class="ts-wrapper"><p class="title">Taboola Selector</p>';
+    instructHtmlDom += '<p class="instruction_ts">Please right click in on element hightlighted to get result</p>';
+    resultBanner.innerHTML = instructHtmlDom;
 }
 
 /**
@@ -21,7 +24,7 @@ function updateSidebarMenu(event) {
     var metaTagImage = document.querySelector('meta[property="og:image"]') && document.querySelector('meta[property="og:image"]').content ? document.querySelector('meta[property="og:image"]').content : document.querySelector('meta[property="twitter:image"]') && document.querySelector('meta[property="twitter:image"]').content ? document.querySelector('meta[property="twitter:image"]').content : 'Unavailable';
     var metaTagUrl = document.querySelector('meta[property="og:url"]') && document.querySelector('meta[property="og:url"]').content ? document.querySelector('meta[property="og:url"]').content : document.querySelector('meta[property="twitter:url"]') && document.querySelector('meta[property="twitter:url"]').content ? document.querySelector('meta[property="twitter:url"]').content : 'Unavailable';
     var metaTagDescription = document.querySelector('meta[property="og:description"]') && document.querySelector('meta[property="og:description"]').content ? document.querySelector('meta[property="og:description"]').content : document.querySelector('meta[property="twitter:description"]') && document.querySelector('meta[property="twitter:description"]').content ? document.querySelector('meta[property="twitter:description"]').content : 'Unavailable';
-    var metaTagCategory = document.querySelector('meta[property="og:category"]') && document.querySelector('meta[property="og:category"]').content ? document.querySelector('meta[property="og:category"]').content : document.querySelector('meta[property="twitter:category"]') && document.querySelector('meta[property="twitter:category"]').content ? document.querySelector('meta[property="twitter:category"]').content : 'Unavailable';
+    var metaTagCategory = document.querySelector('meta[property="og:category"]') && document.querySelector('meta[property="og:category"]').content ? document.querySelector('meta[property="og:category"]').content : document.querySelector('meta[property="twitter:category"]') && document.querySelector('meta[property="twitter:category"]').content ? document.querySelector('meta[property="twitter:category"]').content : document.querySelector('meta[property="category"]') && document.querySelector('meta[property="category"]').content ? document.querySelector('meta[property="category"]').content : 'Unavailable';
 
     /**
      * Facebook App ID
@@ -69,8 +72,8 @@ function updateSidebarMenu(event) {
     var classList = event.target.classList.toString() || '';
     var node = event.target.nodeName.toLowerCase() || '';
     var xpath= getPathTo(target).toLowerCase() || '';
-    var isClassUnique = isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)';
-    var isIdUnique = isIdUnique(id) === true ? '(Unique)' : '(Not Unique)';
+    var isClassUnique = classList != '' ? isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
+    var isIdUnique = id != '' ? isIdUnique(id) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
 
   /**
    * Check class is unique or not
@@ -95,13 +98,13 @@ function updateSidebarMenu(event) {
    resultContent += '<p class="meta"><span><strong class="strong inner-text">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button-url\' onclick=\'tscopyselector("'+escape(metaTagUrlXpath)+'", "ts-button-url")\'>Copy xpath</button>' + '</p>';
    resultContent += '<p class="meta"><span><strong class="strong inner-text">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
-    resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
-    resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
-    resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p><strong class="strong inner-text">Node:</strong> ' + node + '</p>';
+    resultContent += '<p><strong class="strong inner-text">Classes:</strong> ' + classList + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p><strong class="strong inner-text">Ids:</strong> ' + id + ' ' + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p><button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
     resultContent += '<p class="sub-title">Facebook App ID</p>';
-    resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p></div>';
+    resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p> <button class=\'ts-button-facebook\' onclick=\'tscopyselector("'+fbAppId+'", "ts-button-facebook")\'>Copy App Id</button></div>';
     resultContent += '<p class="sub-title">Google DFP</p>';
     resultContent += '<div class="contents-wrapper"><p>' + 'Google' + '</p></div>';
     resultContent += '</div>';
@@ -181,10 +184,10 @@ document.addEventListener('contextmenu', function(event) {
 
 function showHideTSContainer() {
     var resultBannerContainer = document.getElementById('selector-for-chrome-result');
-    if(resultBannerContainer.style.left == '-340px') {
+    if(resultBannerContainer.style.left == '-375px') {
         resultBannerContainer.style.left = '0px';
     } else {
-        resultBannerContainer.style.left = '-340px';
+        resultBannerContainer.style.left = '-375px';
     }
 }
 
