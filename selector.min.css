@@ -1184,7 +1184,7 @@ input[type="text"]:not(.s-input) {
     word-break: break-word;
 }
 ._tsGoogleBannerDom:hover {
-    background: transparent;
+    background: green;
 }
 ._tsGoogleBannerDom p:hover {
     background: transparent;
