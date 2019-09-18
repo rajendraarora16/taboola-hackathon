@@ -13,13 +13,18 @@ function init() {
  * Google banner ad
  */
 function initializeGoogleADFunc(elm) {
-    var _tsGoogleBannerDom = document.createElement('span');
-    _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
-    var _bannerTsText = '<p>Google Ad</p>';
-    _bannerTsText += '<p>Google id: '+elm+'</p>';
-    _tsGoogleBannerDom.innerHTML = _bannerTsText;
-    document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
-    document.getElementById(elm).parentNode.style.position = "relative";
+    if(document.getElementById(elm).parentNode.getElementsByClassName('_tsGoogleBannerDom').length < 1){
+
+        var _tsGoogleBannerDom = document.createElement('span');
+        _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
+        var _bannerTsText = '<p>Google Ad</p>';
+        _bannerTsText += '<p>Google id: '+elm+'</p>';
+        _tsGoogleBannerDom.innerHTML = _bannerTsText;
+        document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
+        document.getElementById(elm).parentNode.style.position = "relative";
+    }
+   
+    
 }
 
 /**
