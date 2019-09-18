@@ -64,6 +64,23 @@ function updateSidebarMenu(event) {
     console.log('meta: ', metaTagDescriptionXpath)
     console.log('meta: ', metaTagCategoryXpath)
 
+    /**
+     * Google DFP array
+     */
+    var googleAdDfpArray = [];
+    var googleAdDfpIframeArrayLength = document.querySelectorAll("[id^='google_ads_iframe_']").length > 0 ? document.querySelectorAll("[id^='google_ads_iframe_']").length : 'Unavailable';
+    var googleAdDfpGptArrayLength = document.querySelectorAll("[id^='div-gpt-ad-']").length > 0 ? document.querySelectorAll("[id^='div-gpt-ad-']").length : 'Unavailable';
+
+    //google_ads_iframe_
+    for(var i=0; i<googleAdDfpIframeArrayLength; i++) {
+        googleAdDfpArray.push(document.querySelectorAll("[id^='google_ads_iframe_']")[i]);
+    }
+    //div-gpt-ad-
+    for(var i=0; i<googleAdDfpGptArrayLength; i++) {
+        googleAdDfpArray.push(document.querySelectorAll("[id^='div-gpt-ad-']")[i]);
+    }
+
+    console.log('gogogle: ', googleAdDfpArray);
 
     /**
      * Selector info
@@ -106,7 +123,19 @@ function updateSidebarMenu(event) {
     resultContent += '<p class="sub-title">Facebook App ID</p>';
     resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p> <button class=\'ts-button-facebook\' onclick=\'tscopyselector("'+fbAppId+'", "ts-button-facebook")\'>Copy App Id</button></div>';
     resultContent += '<p class="sub-title">Google DFP</p>';
-    resultContent += '<div class="contents-wrapper"><p>' + 'Google' + '</p></div>';
+    
+    /**
+     * Google ad rendering
+     */
+    if(googleAdDfpArray.length >= 1) {
+        for(var i=0; i<googleAdDfpArray.length; i++) {
+            resultContent += '<p class="meta"><span><strong class="strong inner-text">Ad '+(i+1)+':</strong><input id="meta-url" type="text" value="' + googleAdDfpArray[i].id + '"></input></span><button class=\'ts-button-category\' onclick=\'jumpToGoogleAdscroll("'+googleAdDfpArray[i].id+'")\'>Jump to Ad</button>' + '</p>';
+        }
+    }else {
+        resultContent += '<p class="meta">Google ad unavailable</p>';
+    }
+    
+    resultContent += '</div>';
     resultContent += '</div>';
     resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
@@ -206,6 +235,14 @@ function tscopyselector(val, btnElm){
     document.body.removeChild(dummyInput);
 
     document.getElementsByClassName(btnElm)[0].innerText="Copied!";
+}
+
+/**
+ * Google add jump to scroll position function
+ */
+function jumpToGoogleAdscroll(elm) {
+    document.getElementById(elm).scrollIntoView();
+    document.getElementById(elm).style.border="5px solid red";
 }
 
 /**
