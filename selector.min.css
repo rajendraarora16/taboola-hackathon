@@ -1120,3 +1120,10 @@ wbr:hover {
 .strong {
     outline: unset!important;
 }
+
+.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category {
+    padding: 0px!important;
+    background: #000!important;
+    border: 1px solid #fff !important;
+    border-radius: 10%!important;
+}
