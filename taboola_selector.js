@@ -184,10 +184,12 @@ document.addEventListener('contextmenu', function(event) {
 
 function showHideTSContainer() {
     var resultBannerContainer = document.getElementById('selector-for-chrome-result');
-    if(resultBannerContainer.style.left == '-375px') {
+    if(resultBannerContainer.style.left == '-325px') {
         resultBannerContainer.style.left = '0px';
+        document.querySelectorAll('#selector-for-chrome-result .show-container-ts')[0].innerText = 'Hide';
     } else {
-        resultBannerContainer.style.left = '-375px';
+        resultBannerContainer.style.left = '-325px';
+        document.querySelectorAll('#selector-for-chrome-result .show-container-ts')[0].innerText = 'Show';
     }
 }
 

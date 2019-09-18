@@ -991,7 +991,7 @@ wbr:hover {
     top: 0;
     width: 350px;
     height: 100%;
-    padding: 20px;
+    padding: 28px;
     margin: 0;
     background-color: rgba(0,0,0,0.9);
     color: #eee;
@@ -1002,6 +1002,7 @@ wbr:hover {
     box-shadow: none !important;
     overflow-y: scroll;
     z-index: 999999999999999999;
+    box-sizing: border-box;
 }
 #selector-for-chrome-result .ts-wrapper:hover {
     background-color: transparent !important;
@@ -1107,10 +1108,11 @@ wbr:hover {
 
 .show-container-ts {
     position: absolute;
-    right: 0;
-    left: 80%;
+    right: -14px;
     background: red;
-    top: 0;
+    top: 17px;
+    transform: rotate(-90deg);
+    width: 55px;
 }
 
 .logo-img-ts {
