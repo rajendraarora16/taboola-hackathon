@@ -1031,14 +1031,6 @@ wbr:hover {
 #selector-for-chrome-result .ts-button:hover {
     opacity: 0.7;
 }
-#selector-for-chrome-result .ts-button:after {
-    content: "y";
-    display: inline-block;
-}
-#selector-for-chrome-result .ts-button:active:after {
-    content: "ied";
-    display: inline-block;
-}
 #selector-for-chrome-result .contents-wrapper {
     padding: 5px;
     border: 1px solid #fff;
@@ -1122,5 +1114,9 @@ wbr:hover {
 
 .logo-img-ts {
     height: 40px;
+    outline: unset!important;
+}
+
+.strong {
     outline: unset!important;
 }
