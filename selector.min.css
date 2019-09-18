@@ -1121,7 +1121,7 @@ wbr:hover {
     outline: unset!important;
 }
 
-.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category {
+.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category, .ts-button-xpath {
     padding: 0px!important;
     background: #000!important;
     border: 1px solid #fff !important;
