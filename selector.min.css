@@ -1123,12 +1123,14 @@ wbr:hover {
 
 }
 
-.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category {
-    padding: 0px!important;8
-    border: 1px solid #fff !important;
+.ts-button-img, .ts-button-title, .ts-button-desc, .ts-button-url, .ts-button-category, .ts-button-xpath {
+    padding: 0px!important;
+    background: #0088c3!important;
+    border: 1px solid #0088c3 !important;
     outline: unset!important;
     font-size: 10px;
     padding: 5px!important;
+    color: #fff;
 
 }
 
