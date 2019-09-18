@@ -89,12 +89,12 @@ function updateSidebarMenu(event) {
    resultContent += '<p class="meta"><span><strong class="strong">Img:</strong> <input id="meta-img" type="text" value="' + metaTagImage + '"></input></span><button class=\'ts-button-img\' onclick=\'tscopyselector("'+escape(metaTagImageXpath)+'", "ts-button-img")\'>Copy xpath</button>' + '</p>';
    resultContent += '<p class="meta"><span><strong class="strong">Url:</strong><input id="meta-url" type="text" value="' + metaTagUrl + '"></input></span><button class=\'ts-button-url\' onclick=\'tscopyselector("'+escape(metaTagUrlXpath)+'", "ts-button-url")\'>Copy xpath</button>' + '</p></div>';
    resultContent += '<p class="meta"><span><strong class="strong">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
-    resultContent += '<p class="sub-title">Selector</p>';
-    resultContent += '<div class="contents-wrapper"><p>node: ' + node + '</p>';
-    resultContent += '<p>classes: ' + classList + ' ' + isClassUnique + '</p> ';
-    resultContent += '<p>ids: ' + id + ' ' + isIdUnique + '</p></div>';
-    resultContent += '<p class="sub-title">Xpath</p>';
-    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p></div>';
+    resultContent += '<p class="sub-title"><strong class="strong">Selector</strong></p>';
+    resultContent += '<div class="contents-wrapper"><p><strong class="strong">Node:</strong> ' + node + '</p>';
+    resultContent += '<p><strong class="strong">Classes: </strong>' + classList + ' ' + isClassUnique + '</p>';
+    resultContent += '<p><strong class="strong">Ids:</strong> ' + id + ' ' + isIdUnique + '</p></div>';
+    resultContent += '<p class="sub-title"><strong class="strong">Xpath</strong></p>';
+    resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p> <button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
     resultContent += '</div>';
     resultContent += '<div class="pinBarTs"><span onclick="showHideTSContainer();" class="collapsing show-container-ts">Hide</span></div>';
 
