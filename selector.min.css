@@ -1181,6 +1181,7 @@ input[type="text"]:not(.s-input) {
     color: #fff;
     font-weight: bold;
     max-width: 280px;
+    word-break: break-word;
 }
 .pinBarTs {
     outline: none !important;
