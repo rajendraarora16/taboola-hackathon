@@ -996,6 +996,7 @@ wbr:hover {
     background-color: rgba(0,0,0,0.9);
     color: #eee;
     font-size: 16px;
+    line-height: 1.5;
     text-align: center;
     outline: none !important;
     -webkit-box-shadow: none !important;
@@ -1003,6 +1004,8 @@ wbr:hover {
     overflow-y: scroll;
     z-index: 999999999999999999;
     box-sizing: border-box;
+    overflow-x: hidden;
+    transition: 1s;
 }
 #selector-for-chrome-result .ts-wrapper:hover {
     background-color: transparent !important;
@@ -1166,4 +1169,19 @@ input[type="text"]:not(.s-input) {
 .instruction_ts {
     font-size: 12px !important;
     word-break: normal!important;
+}
+._tsGoogleBannerDom {
+    background: green;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    z-index: 999999999;
+    color: #fff;
+    font-weight: bold;
+    max-width: 280px;
+}
+.pinBarTs {
+    outline: none !important;
 }
