@@ -1165,4 +1165,5 @@ input[type="text"]:not(.s-input) {
 
 .instruction_ts {
     font-size: 12px !important;
+    word-break: normal!important;
 }
