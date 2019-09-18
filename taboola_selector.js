@@ -10,6 +10,18 @@ function init() {
 }
 
 /**
+ * Google banner ad
+ */
+function initializeGoogleADFunc(elm) {
+    var _tsGoogleBannerDom = document.createElement('span');
+    _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
+    var _bannerTsText = '<p>Google Ad</p>';
+    _bannerTsText += '<p>Google id: '+elm+'</p>';
+    _tsGoogleBannerDom.innerHTML = _bannerTsText;
+    document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
+}
+
+/**
  * Updates the info banner at the bottom of the page
  **/
 function updateSidebarMenu(event) {
@@ -243,6 +255,8 @@ function tscopyselector(val, btnElm){
 function jumpToGoogleAdscroll(elm) {
     document.getElementById(elm).scrollIntoView();
     document.getElementById(elm).style.border="5px solid red";
+
+    initializeGoogleADFunc(elm);
 }
 
 /**
