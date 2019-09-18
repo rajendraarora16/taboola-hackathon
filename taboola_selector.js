@@ -19,6 +19,7 @@ function initializeGoogleADFunc(elm) {
     _bannerTsText += '<p>Google id: '+elm+'</p>';
     _tsGoogleBannerDom.innerHTML = _bannerTsText;
     document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
+    document.getElementById(elm).parentNode.style.position = "relative";
 }
 
 /**
