@@ -1183,6 +1183,13 @@ input[type="text"]:not(.s-input) {
     max-width: 280px;
     word-break: break-word;
 }
+._tsGoogleBannerDom:hover {
+    background: transparent;
+}
+._tsGoogleBannerDom p:hover {
+    background: transparent;
+    box-shadow: none;
+}
 .pinBarTs {
     outline: none !important;
 }
