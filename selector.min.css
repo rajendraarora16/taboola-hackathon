@@ -1049,11 +1049,11 @@ wbr:hover {
     word-break: break-all;
     text-align: left;
     overflow: hidden;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
 }
 #selector-for-chrome-result .ts-wrapper p.meta > span {
     display: inline-block;
-    width: 200px;
+    width: 75%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -1131,6 +1131,9 @@ wbr:hover {
     font-size: 10px;
     padding: 5px!important;
     color: #fff;
+    border-radius: 4px; box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    padding: 0.25em 0.5em;
+    vertical-align: middle;
 
 }
 
@@ -1140,6 +1143,8 @@ input[type="text"]:not(.s-input) {
     color: white!important;
     Background: black!important;
     outline: unset!important;
+    padding: 5px 1px 5px 4px!important;
+    width: 65%;
 }
 
 .inner-text {
