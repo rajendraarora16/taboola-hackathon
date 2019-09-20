@@ -13,18 +13,13 @@ function init() {
  * Google banner ad
  */
 function initializeGoogleADFunc(elm) {
-    if(document.getElementById(elm).parentNode.getElementsByClassName('_tsGoogleBannerDom').length < 1){
-
-        var _tsGoogleBannerDom = document.createElement('span');
-        _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
-        var _bannerTsText = '<p>Google Ad</p>';
-        _bannerTsText += '<p>Google id: '+elm+'</p>';
-        _tsGoogleBannerDom.innerHTML = _bannerTsText;
-        document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
-        document.getElementById(elm).parentNode.style.position = "relative";
-    }
-   
-    
+    var _tsGoogleBannerDom = document.createElement('span');
+    _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
+    var _bannerTsText = '<p><strong class="strong">Google Ad</strong></p>';
+    _bannerTsText += '<p><strong class="strong">Id:</strong> '+elm+'</p>';
+    _tsGoogleBannerDom.innerHTML = _bannerTsText;
+    document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
+    document.getElementById(elm).parentNode.style.position = "relative";
 }
 
 /**
@@ -104,7 +99,7 @@ function updateSidebarMenu(event) {
      * Selector info
      */
     var id = event.target.id.toString() || '';
-    var classList = event.target.classList.toString() || '';
+    var classList = event.target.classList.toString().replace("_ts_highlighted_xpath_container", "") || '';
     var node = event.target.nodeName.toLowerCase() || '';
     var xpath= getPathTo(target).toLowerCase() || '';
     var isClassUnique = classList != '' ? isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
@@ -142,6 +137,20 @@ function updateSidebarMenu(event) {
     resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p> <button class=\'ts-button-facebook\' onclick=\'tscopyselector("'+fbAppId+'", "ts-button-facebook")\'>Copy App Id</button></div>';
     resultContent += '<p class="sub-title">Google DFP</p>';
     
+    /**
+     * If xpath is selected then apply the class.
+     */
+    if(xpath) {
+        /**
+         * If class exist, remove it!
+         */
+        document.getElementsByClassName('_ts_highlighted_xpath_container')[0] ? document.getElementsByClassName('_ts_highlighted_xpath_container')[0].classList.remove("_ts_highlighted_xpath_container") : '';
+        /**
+         * Add class name if xpath is selected
+         */
+        lookupElementByXPath(xpath).classList.add("_ts_highlighted_xpath_container");
+    }
+
     /**
      * Google ad rendering
      */
@@ -263,6 +272,15 @@ function jumpToGoogleAdscroll(elm) {
     document.getElementById(elm).style.border="5px solid red";
 
     initializeGoogleADFunc(elm);
+}
+
+/**
+ * look up for xpath element
+ */
+function lookupElementByXPath(path) { 
+    var evaluator = new XPathEvaluator(); 
+    var result = evaluator.evaluate(path, document.documentElement, null,XPathResult.FIRST_ORDERED_NODE_TYPE, null); 
+    return  result.singleNodeValue; 
 }
 
 /**

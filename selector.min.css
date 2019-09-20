@@ -1,5 +1,4 @@
 /* Taboola xpath CSS inspired by Hackathon. */
-
 article:hover {
     -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, .6);
     box-shadow: 0 0 1rem rgba(0, 0, 0, .6);
@@ -801,4 +800,11 @@ p.instruction_ts {
     color: #00dd03;
     font-weight: bold;
     font-size: 16px !important;
+}
+
+._ts_highlighted_xpath_container {
+    background: #f5f9178c!important;
+    -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)!important;
+    -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)!important;
+    box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75)!important;
 }
