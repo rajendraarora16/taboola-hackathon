@@ -101,7 +101,14 @@ function updateSidebarMenu(event) {
     var id = event.target.id.toString() || '';
     var classList = event.target.classList.toString().replace("_ts_highlighted_xpath_container", "") || '';
     var node = event.target.nodeName.toLowerCase() || '';
-    var xpath= getPathTo(target).toLowerCase() || '';
+    
+    var xpath= ts_gen_algo_xpath(target) || '';
+    /**
+     * Xpath modification as per offstage.
+     */
+    if(xpath.charAt(0) && xpath.charAt(1) == '/') xpath = xpath.substr(2);
+    xpath = ('//html:').concat(xpath);
+
     var isClassUnique = classList != '' ? isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
     var isIdUnique = id != '' ? isIdUnique(id) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
 
@@ -144,11 +151,11 @@ function updateSidebarMenu(event) {
         /**
          * If class exist, remove it!
          */
-        document.getElementsByClassName('_ts_highlighted_xpath_container')[0] ? document.getElementsByClassName('_ts_highlighted_xpath_container')[0].classList.remove("_ts_highlighted_xpath_container") : '';
+        // document.getElementsByClassName('_ts_highlighted_xpath_container')[0] ? document.getElementsByClassName('_ts_highlighted_xpath_container')[0].classList.remove("_ts_highlighted_xpath_container") : '';
         /**
          * Add class name if xpath is selected
          */
-        lookupElementByXPath(xpath).classList.add("_ts_highlighted_xpath_container");
+        // lookupElementByXPath(xpath).classList.add("_ts_highlighted_xpath_container");
     }
 
     /**
@@ -170,22 +177,17 @@ function updateSidebarMenu(event) {
 
 
 
-    function getPathTo(element) {
-        if (element.id!=='')
-            return 'id("'+element.id+'")';
-        if (element===document.body)
-            return element.tagName;
-
-        var ix= 0;
-        var siblings= element.parentNode.childNodes;
-        for (var i= 0; i<siblings.length; i++) {
-            var sibling= siblings[i];
-            if (sibling===element)
-                return getPathTo(element.parentNode)+'/'+element.tagName+'['+(ix+1)+']';
-            if (sibling.nodeType===1 && sibling.tagName===element.tagName)
-                ix++;
-        }
-    }
+    // function getPathTo(element) {
+    //     const idx = (sib, name) => sib 
+    //     ? idx(sib.previousElementSibling, name||sib.localName) + (sib.localName == name)
+    //     : 1;
+    // const segs = elm => !elm || elm.nodeType !== 1 
+    //     ? ['']
+    //     : elm.id && document.getElementById(elm.id) === elm
+    //         ? [`id("${elm.id}")`]
+    //         : [...segs(elm.parentNode), `${elm.localName.toLowerCase()}[${idx(elm)}]`];
+    // return segs(element).join('/');
+    // }
 
     /**
      * isClassUnique() - to check whether class name is unique in DOM or not
