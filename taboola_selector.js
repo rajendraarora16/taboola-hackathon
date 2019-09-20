@@ -15,8 +15,8 @@ function init() {
 function initializeGoogleADFunc(elm) {
     var _tsGoogleBannerDom = document.createElement('span');
     _tsGoogleBannerDom.className += '_tsGoogleBannerDom';
-    var _bannerTsText = '<p>Google Ad</p>';
-    _bannerTsText += '<p>Google id: '+elm+'</p>';
+    var _bannerTsText = '<p><strong class="strong">Google Ad</strong></p>';
+    _bannerTsText += '<p><strong class="strong">Id:</strong> '+elm+'</p>';
     _tsGoogleBannerDom.innerHTML = _bannerTsText;
     document.getElementById(elm).parentNode.appendChild(_tsGoogleBannerDom);
     document.getElementById(elm).parentNode.style.position = "relative";
@@ -129,7 +129,7 @@ function updateSidebarMenu(event) {
    resultContent += '<p class="meta"><span><strong class="strong inner-text">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p><strong class="strong inner-text">Node:</strong> ' + node + '</p>';
-    resultContent += '<p><strong class="strong inner-text">Classes:</strong> ' + classList + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p><strong class="strong inner-text">Classes:</strong> ' + classList.replace("_ts_highlighted_xpath_container", "") + ' ' + isClassUnique + '</p> ';
     resultContent += '<p><strong class="strong inner-text">Ids:</strong> ' + id + ' ' + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p><button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
@@ -137,6 +137,20 @@ function updateSidebarMenu(event) {
     resultContent += '<div class="contents-wrapper"><p>' + fbAppId + '</p> <button class=\'ts-button-facebook\' onclick=\'tscopyselector("'+fbAppId+'", "ts-button-facebook")\'>Copy App Id</button></div>';
     resultContent += '<p class="sub-title">Google DFP</p>';
     
+    /**
+     * If xpath is selected then apply the class.
+     */
+    if(xpath) {
+        /**
+         * If class exist, remove it!
+         */
+        document.getElementsByClassName('_ts_highlighted_xpath_container')[0] ? document.getElementsByClassName('_ts_highlighted_xpath_container')[0].classList.remove("_ts_highlighted_xpath_container") : '';
+        /**
+         * Add class name if xpath is selected
+         */
+        lookupElementByXPath(xpath).className = "_ts_highlighted_xpath_container";
+    }
+
     /**
      * Google ad rendering
      */
@@ -258,6 +272,15 @@ function jumpToGoogleAdscroll(elm) {
     document.getElementById(elm).style.border="5px solid red";
 
     initializeGoogleADFunc(elm);
+}
+
+/**
+ * look up for xpath element
+ */
+function lookupElementByXPath(path) { 
+    var evaluator = new XPathEvaluator(); 
+    var result = evaluator.evaluate(path, document.documentElement, null,XPathResult.FIRST_ORDERED_NODE_TYPE, null); 
+    return  result.singleNodeValue; 
 }
 
 /**
