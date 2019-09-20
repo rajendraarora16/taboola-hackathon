@@ -148,7 +148,7 @@ function updateSidebarMenu(event) {
         /**
          * Add class name if xpath is selected
          */
-        lookupElementByXPath(xpath).className += "_ts_highlighted_xpath_container";
+        lookupElementByXPath(xpath).classList.add("_ts_highlighted_xpath_container");
     }
 
     /**
