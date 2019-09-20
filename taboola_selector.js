@@ -99,7 +99,7 @@ function updateSidebarMenu(event) {
      * Selector info
      */
     var id = event.target.id.toString() || '';
-    var classList = event.target.classList.toString() || '';
+    var classList = event.target.classList.toString().replace("_ts_highlighted_xpath_container", "") || '';
     var node = event.target.nodeName.toLowerCase() || '';
     var xpath= getPathTo(target).toLowerCase() || '';
     var isClassUnique = classList != '' ? isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
@@ -129,7 +129,7 @@ function updateSidebarMenu(event) {
    resultContent += '<p class="meta"><span><strong class="strong inner-text">Category:</strong><input id="meta-url" type="text" value="' + metaTagCategory + '"></input></span><button class=\'ts-button-category\' onclick=\'tscopyselector("'+escape(metaTagCategoryXpath)+'", "ts-button-category")\'>Copy xpath</button>' + '</p></div>';
     resultContent += '<p class="sub-title">Selector</p>';
     resultContent += '<div class="contents-wrapper"><p><strong class="strong inner-text">Node:</strong> ' + node + '</p>';
-    resultContent += '<p><strong class="strong inner-text">Classes:</strong> ' + classList.replace("_ts_highlighted_xpath_container", "") + ' ' + isClassUnique + '</p> ';
+    resultContent += '<p><strong class="strong inner-text">Classes:</strong> ' + classList + ' ' + isClassUnique + '</p> ';
     resultContent += '<p><strong class="strong inner-text">Ids:</strong> ' + id + ' ' + isIdUnique + '</p></div>';
     resultContent += '<p class="sub-title">Xpath</p>';
     resultContent += '<div class="contents-wrapper"><p>' + xpath + '</p><button class=\'ts-button-xpath\' onclick=\'tscopyselector("'+escape(xpath)+'", "ts-button-xpath")\'>Copy Selector</button></div>';
@@ -148,7 +148,7 @@ function updateSidebarMenu(event) {
         /**
          * Add class name if xpath is selected
          */
-        lookupElementByXPath(xpath).className = "_ts_highlighted_xpath_container";
+        lookupElementByXPath(xpath).className += "_ts_highlighted_xpath_container";
     }
 
     /**
