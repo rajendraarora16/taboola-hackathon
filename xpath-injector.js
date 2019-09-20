@@ -39,6 +39,13 @@
     injector += 'mouseJS.src = chrome.extension.getURL("/mouse_event.js");';
     injector += 'mouseJS.id = "mouseJS";';
     injector += 'document.getElementsByTagName("head")[0].appendChild(mouseJS);';
+
+    injector += 'xpathGenJs = document.createElement("script");';
+    injector += 'xpathGenJs.type = "text/javascript";';
+    injector += 'xpathGenJs.src = chrome.extension.getURL("/xpath_generator.js");';
+    injector += 'xpathGenJs.id = "xpathGenJs";';
+    injector += 'document.getElementsByTagName("head")[0].appendChild(xpathGenJs);';
+
     injector += 'selectorResult = document.createElement("div"),';
     injector += 'selectorResult.id = "selector-for-chrome-result",';
     injector += 'document.getElementsByTagName("body")[0].appendChild(selectorResult)';
