@@ -253,7 +253,7 @@ function tscopyselector(val, btnElm){
     dummyInput.setAttribute("type", "text");
     dummyInput.setAttribute("id", "dummy_id");
     dummyInput.setAttribute("value", unescape(val));
-    dummyInput.focus();
+    // dummyInput.focus();
     dummyInput.select();
     document.execCommand("copy");
     document.body.removeChild(dummyInput);
@@ -265,6 +265,7 @@ function tscopyselector(val, btnElm){
  * Google add jump to scroll position function
  */
 function jumpToGoogleAdscroll(elm) {
+    console.log('sssss')
     document.getElementById(elm).scrollIntoView();
     document.getElementById(elm).style.border="5px solid red";
 
