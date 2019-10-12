@@ -136,22 +136,6 @@ function initMandatoryOptions(arrayOfOptions) {
     }
 }
 
-function displayHistory(){
-    var elem = document.querySelector("#ts-xpath-algorithm-history");
-    elem.innerHTML = "";
-    TRY_HISTORY.forEach(function(h){
-       var child = document.createElement("li");
-       child.innerHTML = "" +
-           "<span>#"+h.order+"</span>" +
-           "<input type='text' class='os-text-input' id='os-history-xpath-input-"+h.order+"' value=\""+h.xpath+"\"/>" +
-           "<span class='ts-match-history' id='ts-history-xpath-match-"+h.order+"' >"+h.match+"</span>";
-       elem.appendChild(child);
-       elem.querySelector("#ts-history-xpath-match-"+h.order).onclick = function(ev){
-           _ts_xpath_result = document.querySelector("#"+this.id.replace("match","input")).value;
-           return _ts_xpath_result;
-       };
-    });
-}
 
 function tryPossibilities(element, arrayOfOptions, parentTry, suffix, rootElement) {
     initMandatoryOptions(arrayOfOptions);
@@ -313,7 +297,25 @@ ts_gen_algo_xpath = function(element) {
     MANDATORY_OPTIONS = null;
     TRUE_PREFIX = "";
     TRY_HISTORY = [];
-    _ts_execution_option = ["_tag!","id","class","_position","width","onload","height","type","role","name","maxlength","jsaction","autocorrect","autocomplete","autocapitalize","aria-haspopup","aria-label","aria-autocomplete"];
+    _ts_execution_option = [
+        "_tag!",
+        "id",
+        "class",
+        "_position",
+        "width",
+        "onload",
+        "height",
+        "type",
+        "role",
+        "name",
+        "maxlength",
+        "jsaction",
+        "autocorrect",
+        "autocomplete",
+        "autocapitalize",
+        "aria-haspopup",
+        "aria-label",
+        "aria-autocomplete"];
     
     /**
      * Google example
@@ -322,17 +324,18 @@ ts_gen_algo_xpath = function(element) {
 
     try {
         var options = _ts_execution_option;
+        let offstageXpathBuilder = (str) => str.replace(/\/(?!html:)(?=\w*\[)/gi,"/html:")
         if (options.length > 0) {
             /**
              * Change the xpath stuffs for selector 
              */
             _ts_xpath_result  = tryPossibilities(element, options);
-            // displayHistory();
+
         }else if(__x(GLOBAL_PREFIX).length === 1) {
             _ts_xpath_result = searchFromPrefix(GLOBAL_PREFIX, __x(GLOBAL_PREFIX)[0], element, [__x(GLOBAL_PREFIX)[0]]);
         }
 
-        return _ts_xpath_result;
+        return offstageXpathBuilder(_ts_xpath_result);
     } catch (e) {
         console.error(e);
     }

@@ -4,7 +4,7 @@
   "name": "Taboola xpath selector",
   "short_name": "selector",
   "description": "This extension helps to locate xpath in DOM",
-  "version": "1.0",
+  "version": "1.2",
 
   "permissions": [
       "activeTab"

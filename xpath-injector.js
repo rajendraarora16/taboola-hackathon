@@ -20,6 +20,9 @@
     injector += 'document.getElementsByTagName("body")[0].appendChild(mouseEnableJS);';
     injector += 'document.getElementsByTagName("body")[0].removeChild(document.getElementById("selector-for-chrome-result"));';
 
+    //reload page
+    injector += 'document.location.reload();';
+
     //if they don't exist, inject them
     injector += '} else {';
 
