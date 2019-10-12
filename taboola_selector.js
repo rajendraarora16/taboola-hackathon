@@ -103,11 +103,6 @@ function updateSidebarMenu(event) {
     var node = event.target.nodeName.toLowerCase() || '';
     
     var xpath= ts_gen_algo_xpath(target) || '';
-    /**
-     * Xpath modification as per offstage.
-     */
-    if(xpath.charAt(0) && xpath.charAt(1) == '/') xpath = xpath.substr(2);
-    xpath = ('//html:').concat(xpath);
 
     var isClassUnique = classList != '' ? isClassUnique(classList) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';
     var isIdUnique = id != '' ? isIdUnique(id) === true ? '(Unique)' : '(Not Unique)' : 'Unavailable';

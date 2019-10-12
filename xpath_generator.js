@@ -313,7 +313,25 @@ ts_gen_algo_xpath = function(element) {
     MANDATORY_OPTIONS = null;
     TRUE_PREFIX = "";
     TRY_HISTORY = [];
-    _ts_execution_option = ["_tag!","id","class","_position","width","onload","height","type","role","name","maxlength","jsaction","autocorrect","autocomplete","autocapitalize","aria-haspopup","aria-label","aria-autocomplete"];
+    _ts_execution_option = [
+        "_tag!",
+        "id",
+        "class",
+        "_position",
+        "width",
+        "onload",
+        "height",
+        "type",
+        "role",
+        "name",
+        "maxlength",
+        "jsaction",
+        "autocorrect",
+        "autocomplete",
+        "autocapitalize",
+        "aria-haspopup",
+        "aria-label",
+        "aria-autocomplete"];
     
     /**
      * Google example
@@ -322,17 +340,18 @@ ts_gen_algo_xpath = function(element) {
 
     try {
         var options = _ts_execution_option;
+        let offstageXpathBuilder = (str) => str.replace(/\/(?!html:)(?=\w*\[)/gi,"/html:")
         if (options.length > 0) {
             /**
              * Change the xpath stuffs for selector 
              */
             _ts_xpath_result  = tryPossibilities(element, options);
-            // displayHistory();
+
         }else if(__x(GLOBAL_PREFIX).length === 1) {
             _ts_xpath_result = searchFromPrefix(GLOBAL_PREFIX, __x(GLOBAL_PREFIX)[0], element, [__x(GLOBAL_PREFIX)[0]]);
         }
 
-        return _ts_xpath_result;
+        return offstageXpathBuilder(_ts_xpath_result);
     } catch (e) {
         console.error(e);
     }
