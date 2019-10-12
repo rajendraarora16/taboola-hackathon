@@ -265,7 +265,6 @@ function tscopyselector(val, btnElm){
  * Google add jump to scroll position function
  */
 function jumpToGoogleAdscroll(elm) {
-    console.log('sssss')
     document.getElementById(elm).scrollIntoView();
     document.getElementById(elm).style.border="5px solid red";
 
