@@ -597,7 +597,7 @@ wbr:hover {
     padding: 28px;
     margin: 0;
     background-color: rgba(0,0,0,0.9);
-    color: #eee;
+    color: #eee!important;
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
@@ -625,7 +625,7 @@ wbr:hover {
 #selector-for-chrome-result .ts-button {
     display: inline-block;
     background: #144c92;
-    color: #fff;
+    color: #fff!important;
     border-radius: 5px;
     padding: 2px 5px;
     outline: none !important;
@@ -640,7 +640,7 @@ wbr:hover {
 }
 #selector-for-chrome-result .contents-wrapper {
     padding: 5px;
-    border: 1px solid #fff;
+    border: 1px solid #fff!important;
 }
 #selector-for-chrome-result .ts-wrapper .title {
     font-weight: bold;
@@ -687,7 +687,7 @@ wbr:hover {
 
 #selector-for-chrome-result b,
 #selector-for-chrome-result label {
-    color: #0088C3;
+    color: #0088C3!important;
     outline: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -738,7 +738,7 @@ wbr:hover {
     outline: unset!important;
     font-size: 10px;
     padding: 5px!important;
-    color: #fff;
+    color: #fff!important;
     border-radius: 4px; box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
     padding: 0.25em 0.5em;
     vertical-align: middle;
@@ -781,7 +781,7 @@ input[type="text"]:not(.s-input) {
     left: 0;
     text-align: left;
     z-index: 999999999;
-    color: #fff;
+    color: #fff!important;
     font-weight: bold;
     max-width: 280px;
     word-break: break-word;

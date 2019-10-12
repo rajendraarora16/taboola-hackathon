@@ -253,7 +253,7 @@ function tscopyselector(val, btnElm){
     dummyInput.setAttribute("type", "text");
     dummyInput.setAttribute("id", "dummy_id");
     dummyInput.setAttribute("value", unescape(val));
-    dummyInput.focus();
+    // dummyInput.focus();
     dummyInput.select();
     document.execCommand("copy");
     document.body.removeChild(dummyInput);
