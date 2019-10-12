@@ -1,3 +1,3 @@
-# Selector for Chrome
+# Taboola Selector
 
-Project for hackathon
+Taboola hackathon project
