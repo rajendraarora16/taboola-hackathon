@@ -136,22 +136,6 @@ function initMandatoryOptions(arrayOfOptions) {
     }
 }
 
-function displayHistory(){
-    var elem = document.querySelector("#ts-xpath-algorithm-history");
-    elem.innerHTML = "";
-    TRY_HISTORY.forEach(function(h){
-       var child = document.createElement("li");
-       child.innerHTML = "" +
-           "<span>#"+h.order+"</span>" +
-           "<input type='text' class='os-text-input' id='os-history-xpath-input-"+h.order+"' value=\""+h.xpath+"\"/>" +
-           "<span class='ts-match-history' id='ts-history-xpath-match-"+h.order+"' >"+h.match+"</span>";
-       elem.appendChild(child);
-       elem.querySelector("#ts-history-xpath-match-"+h.order).onclick = function(ev){
-           _ts_xpath_result = document.querySelector("#"+this.id.replace("match","input")).value;
-           return _ts_xpath_result;
-       };
-    });
-}
 
 function tryPossibilities(element, arrayOfOptions, parentTry, suffix, rootElement) {
     initMandatoryOptions(arrayOfOptions);
